@@ -138,7 +138,7 @@ const homethree = () => (
     <section className='container'>
       <div className='row'>
         <div className='col-lg-12 text-center'>
-          <h2 className='style-2'>Uploaded Today</h2>
+          <h2 className='style-2'>Hot Today</h2>
           <div className="small-border"></div>
         </div>
       </div>
