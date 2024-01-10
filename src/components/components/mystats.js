@@ -9,8 +9,9 @@ const Mystats = () => (
                     <div className="mid text-light bg-color">
                         <p className="price">
                             {/* <span className="currency">$</span> */}
-                            <span className="m opt-1">907</span>
-                            <span className="month"> Tokens earned today</span>
+                            <span className="m opt-1">87</span>
+                            <br />
+                            <span className="month"> Creations</span>
                         </p>
                     </div>
                 </div>
@@ -21,8 +22,9 @@ const Mystats = () => (
                     <div className="mid text-light bg-color">
                         <p className="price">
                             {/* <span className="currency">$</span> */}
-                            <span className="m opt-1">10,387</span>
-                            <span className="month"> Tokens in total</span>
+                            <span className="m opt-1">1,237,907</span>
+                            <br />
+                            <span className="month"> Token Earned</span>
                         </p>
                     </div>
                 </div>
@@ -34,7 +36,8 @@ const Mystats = () => (
                         <p className="price">
                             {/* <span className="currency">$</span> */}
                             <span className="m opt-1">654</span>
-                            <span className="month"> Voting Weight</span>
+                            <br />
+                            <span className="month"> Earned Today</span>
                         </p>
                     </div>
                 </div>
@@ -45,16 +48,18 @@ const Mystats = () => (
                     <div className="mid text-light bg-color">
                         <p className="price">
                             {/* <span className="currency">$</span> */}
-                            <span className="m opt-1">86</span>
-                            <span className="month"> Vote Casted</span>
+                            <span className="m opt-1">136</span>
+                            <br />
+                            <span className="month"> Voting Power</span>
                         </p>
                     </div>
                 </div>
             </div>
 
-
             <div className="col-lg-6 offset-lg-3 text-center">
-                <small>Learn how to create and earn <span><a href='/'>here</a></span>.</small>
+                <p>Learn how to cash out your earning, conviently and legally
+                    <span> <a target='_blank' href='https://docs.gitbook.com/'> here</a>. </span>
+                </p>
             </div>
 
         </div>

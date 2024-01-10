@@ -3,7 +3,6 @@ import ColumnNew from '../components/ColumnNew';
 import Mystats from '../components/mystats';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
-import Wallet from '../components/wallet';
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.white {
@@ -60,7 +59,6 @@ const Profile = function () {
                   <i className="fa fa-edit" onClick={
                     function () {
                       console.log('edit profile 1');
-                      // navigate('/login');
                       window.location.href = '/edit';
                       console.log('edit profile 2');
                     }}>
@@ -91,9 +89,9 @@ const Profile = function () {
           <div className='col-lg-12'>
             <div className="items_filter">
               <ul className="de_nav text-left">
-                <li id='Mainbtn' className="active"><span onClick={handleBtnClick}>My Stats</span></li>
-                <li id='Mainbtn1' className=""><span onClick={handleBtnClick1}>My Earning</span></li>
-                <li id='Mainbtn2' className=""><span onClick={handleBtnClick2}>My Votes</span></li>
+                <li id='Mainbtn' className="active"><span onClick={handleBtnClick}>My Uploads</span></li>
+                <li id='Mainbtn1' className=""><span onClick={handleBtnClick1}>My Voting</span></li>
+                <li id='Mainbtn2' className=""><span onClick={handleBtnClick2}>My Earning</span></li>
               </ul>
             </div>
           </div>
@@ -101,19 +99,19 @@ const Profile = function () {
 
         {openMenu && (
           <div id='zero1' className='onStep fadeIn'>
-            <Mystats />
+            <ColumnNew />
           </div>
         )}
 
         {openMenu1 && (
           <div id='zero2' className='onStep fadeIn'>
-            <Wallet />
+            {/* <Wallet /> */}
           </div>
         )}
 
         {openMenu2 && (
           <div id='zero3' className='onStep fadeIn'>
-            <ColumnNew />
+            <Mystats />
           </div>
         )}
       </section>

@@ -1003,7 +1003,11 @@ p.lead {
   .navbar-item.login-button {
 
     border-radius: 8px;
-    background-color: black;
+    // background-color: black;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, #1180E6 0%, #F02177 100%);
+
+
 
     a {
       color: white;
@@ -1271,6 +1275,12 @@ p.lead {
       cursor: pointer;
       box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.0);
       transition: all 0.3s ease;
+
+      border-radius: 8px;
+      background-color: transparent;
+      background-image: linear-gradient(90deg, #1180E6 0%, #F02177 100%);
+
+
 
       &:hover {
         color: $color;
@@ -4144,7 +4154,7 @@ img.img-rounded {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   // color: $white; // why is this white? 
-  color:#201828;
+  color: #201828;
 }
 
 .list.s3 {
@@ -4194,6 +4204,11 @@ img.img-rounded {
 
   .btn-main {
     width: 100%;
+
+    border-radius: 8px;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, #1180E6 0%, #F02177 100%);
+
   }
 
   .list.s3 {
