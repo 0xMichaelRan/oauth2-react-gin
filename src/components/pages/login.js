@@ -53,7 +53,7 @@ const Login = () => {
           console.log("Login successful for user " + localStorage.getItem('user_name') + " with email " + localStorage.getItem('user_email') + " and id " + localStorage.getItem('user_id'));
           console.log(localStorage);
 
-          window.location.href = "/home";
+          window.location.href = "/profile";
           setShowMessage(true);
         } else {
           setIsPasswordIncorrect(true);

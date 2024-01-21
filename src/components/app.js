@@ -8,7 +8,7 @@ import Home2 from './pages/home2';
 import Explore from './pages/explore';
 import Explore2 from './pages/explore2';
 import Helpcenter from './pages/helpcenter';
-import Rangking from './pages/rangking';
+import Rangking from './pages/ranking';
 import ArtList from './pages/artList';
 import ItemDetail from './pages/ItemDetail';
 import Author from './pages/author';

@@ -13,7 +13,7 @@ const footer = () => (
                             <li><Link to="/Auction">Auction</Link></li>
                             <li><Link to="/artList">artList</Link></li>
                             <li><Link to="/author">Author</Link></li>
-                            <li><Link to="/rangking">rangking</Link></li>
+                            <li><Link to="/rangking">Ranking</Link></li>
                         </ul>
                     </div>
                 </div>

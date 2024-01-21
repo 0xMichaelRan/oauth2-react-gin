@@ -1,9 +1,9 @@
 import React from "react";
 import ColumnNew from '../components/ColumnNew';
-import ColumnZeroTwo from '../components/ColumnZeroTwo';
-import ColumnZeroThree from '../components/ColumnZeroThree';
+import Mystats from '../components/mystats';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
+import Wallet from '../components/wallet';
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.white {
@@ -12,7 +12,8 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const ArtList = function () {
+const Profile = function () {
+
   const [openMenu, setOpenMenu] = React.useState(true);
   const [openMenu1, setOpenMenu1] = React.useState(false);
   const [openMenu2, setOpenMenu2] = React.useState(false);
@@ -56,23 +57,28 @@ const ArtList = function () {
               <div className="de-flex-col">
                 <div className="profile_avatar">
                   <img src="./img/author_single/author_thumbnail.jpg" alt="" />
-                  <i className="fa fa-check"></i>
+                  <i className="fa fa-edit" onClick={
+                    function () {
+                      console.log('edit profile 1');
+                      // navigate('/login');
+                      window.location.href = '/edit';
+                      console.log('edit profile 2');
+                    }}>
+                  </i>
                   <div className="profile_name">
                     <h4>
-                      Monica Lucas
-                      <span className="profile_username">@monicaaa</span>
-                      <span id="wallet" className="profile_wallet">TODO-dzFFzCqrhshMSxb9oW3mRo4MJrQkusV3fGFSTwaiu4wPBqMryA9DYVJCkW9n7twCffG5f5wX2sSkoDXGiZB1HPa7K7f865Kk4LqnrME</span>
+                      Micheale Siri
+                      <span className="profile_username">@siri_michelle</span>
+                      <span id="wallet" className="profile_wallet">TD-dzFFzCqrhshMSxb9oW3mRo4MJrQkusV3fGFSTwaiu4wPBqMryA9DYVJCkW9n7twCffG5f5wX2sSkoDXGiZB1HPa7K7f865Kk4LqnrME</span>
                       <button id="btn_copy" title="Copy Text">Copy</button>
                     </h4>
                   </div>
                 </div>
               </div>
+
               <div className="profile_follow de-flex">
                 <div className="de-flex-col">
-                  <div className="profile_follower">500 followers</div>
-                </div>
-                <div className="de-flex-col">
-                  <span className="btn-main">Follow</span>
+                  <div className="profile_follower">23 followers</div>
                 </div>
               </div>
             </div>
@@ -85,9 +91,9 @@ const ArtList = function () {
           <div className='col-lg-12'>
             <div className="items_filter">
               <ul className="de_nav text-left">
-                <li id='Mainbtn' className="active"><span onClick={handleBtnClick}>On Sale</span></li>
-                <li id='Mainbtn1' className=""><span onClick={handleBtnClick1}>Created</span></li>
-                <li id='Mainbtn2' className=""><span onClick={handleBtnClick2}>Liked</span></li>
+                <li id='Mainbtn' className="active"><span onClick={handleBtnClick}>My Stats</span></li>
+                <li id='Mainbtn1' className=""><span onClick={handleBtnClick1}>My Earning</span></li>
+                <li id='Mainbtn2' className=""><span onClick={handleBtnClick2}>My Votes</span></li>
               </ul>
             </div>
           </div>
@@ -95,17 +101,19 @@ const ArtList = function () {
 
         {openMenu && (
           <div id='zero1' className='onStep fadeIn'>
-            <ColumnNew />
+            <Mystats />
           </div>
         )}
+
         {openMenu1 && (
           <div id='zero2' className='onStep fadeIn'>
-            <ColumnZeroTwo />
+            <Wallet />
           </div>
         )}
+
         {openMenu2 && (
           <div id='zero3' className='onStep fadeIn'>
-            <ColumnZeroThree />
+            <ColumnNew />
           </div>
         )}
       </section>
@@ -114,4 +122,4 @@ const ArtList = function () {
     </div>
   );
 }
-export default ArtList;
+export default Profile;

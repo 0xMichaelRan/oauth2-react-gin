@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from '@reach/router';
 import useOnclickOutside from "react-cool-onclickoutside";
-import { useNavigate } from 'react-router-dom';
 import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
 import AuthContext from '../../context/AuthContext';
 
@@ -28,15 +27,12 @@ const Header = function () {
 
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [openMenu1, setOpenMenu1] = React.useState(false);
-  const navigate = useNavigate();
 
   // Retrieve the name from localStorage and store it in state
   const [userName, setUserName] = React.useState(localStorage.getItem('user_name'));
 
   const handleBtnClick1 = (): void => {
     setOpenMenu1(!openMenu1);
-    //navigate to profile page: it does not seem to work?
-    navigate('/profile');
   };
 
   const closeMenu1 = (): void => {
