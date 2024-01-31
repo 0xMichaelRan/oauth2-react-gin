@@ -71,8 +71,8 @@ const Header = function () {
     setIsLoggedIn(false);
     localStorage.clear();
 
-    // Redirect to login page
-    navigate('/login');
+    // Redirect to login page and refresh the page
+    window.location.href = "/login";
     console.log(localStorage);
   };
 
