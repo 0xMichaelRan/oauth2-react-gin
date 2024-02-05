@@ -11,7 +11,8 @@ import Helpcenter from './pages/helpcenter';
 import Rangking from './pages/rangking';
 import ArtList from './pages/artList';
 import ItemDetail from './pages/ItemDetail';
-import Author from './pages/Author';
+import Author from './pages/author';
+import Profile from './pages/profile';
 import Wallet from './pages/wallet';
 import Login from './pages/login';
 import LoginTwo from './pages/loginTwo';
@@ -67,7 +68,8 @@ const app = () => (
         <Rangking path="/rangking" />
         <ArtList path="/artList" />
         <ItemDetail path="/ItemDetail" />
-        <Author path="/Author" />
+        <Author path="/author" />
+        <Profile path="/profile" />
         <Wallet path="/wallet" />
         <Login path="/login" />
         <LoginTwo path="/loginTwo" />

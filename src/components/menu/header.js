@@ -35,6 +35,8 @@ const Header = function () {
 
   const handleBtnClick1 = (): void => {
     setOpenMenu1(!openMenu1);
+    //navigate to profile page: it does not seem to work?
+    navigate('/profile');
   };
 
   const closeMenu1 = (): void => {
@@ -164,7 +166,7 @@ const Header = function () {
                         {openMenu1 && (
                           <div className='item-dropdown'>
                             <div className="dropdown" onClick={closeMenu1}>
-                              <NavLink to="/Author" onClick={() => btn_icon(!showmenu)}>Profile</NavLink>
+                              <NavLink to="/profile" onClick={() => btn_icon(!showmenu)}>Profile</NavLink>
                               {/* eslint-disable-next-line */}
                               <a onClick={handleLogout}>Logout</a>
                             </div>
@@ -230,7 +232,7 @@ const Header = function () {
                         {openMenu1 && (
                           <div className='item-dropdown'>
                             <div className="dropdown" onClick={closeMenu1}>
-                              <NavLink to="/Author">Profile</NavLink>
+                              <NavLink to="/profile">Profile</NavLink>
                               {/* eslint-disable-next-line */}
                               <a onClick={handleLogout}>Logout</a>
                             </div>
