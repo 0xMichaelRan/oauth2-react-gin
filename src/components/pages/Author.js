@@ -1,5 +1,5 @@
 import React from "react";
-import ColumnZero from '../components/ColumnZero';
+import ColumnNew from '../components/ColumnNew';
 import ColumnZeroTwo from '../components/ColumnZeroTwo';
 import ColumnZeroThree from '../components/ColumnZeroThree';
 import Footer from '../components/footer';
@@ -16,6 +16,7 @@ const ArtList = function () {
   const [openMenu, setOpenMenu] = React.useState(true);
   const [openMenu1, setOpenMenu1] = React.useState(false);
   const [openMenu2, setOpenMenu2] = React.useState(false);
+
   const handleBtnClick = (): void => {
     setOpenMenu(!openMenu);
     setOpenMenu1(false);
@@ -24,6 +25,7 @@ const ArtList = function () {
     document.getElementById("Mainbtn1").classList.remove("active");
     document.getElementById("Mainbtn2").classList.remove("active");
   };
+
   const handleBtnClick1 = (): void => {
     setOpenMenu1(!openMenu1);
     setOpenMenu2(false);
@@ -32,6 +34,7 @@ const ArtList = function () {
     document.getElementById("Mainbtn").classList.remove("active");
     document.getElementById("Mainbtn2").classList.remove("active");
   };
+
   const handleBtnClick2 = (): void => {
     setOpenMenu2(!openMenu2);
     setOpenMenu(false);
@@ -40,8 +43,6 @@ const ArtList = function () {
     document.getElementById("Mainbtn").classList.remove("active");
     document.getElementById("Mainbtn1").classList.remove("active");
   };
-
-
 
   return (
     <div>
@@ -60,7 +61,7 @@ const ArtList = function () {
                     <h4>
                       Monica Lucas
                       <span className="profile_username">@monicaaa</span>
-                      <span id="wallet" className="profile_wallet">DdzFFzCqrhshMSxb9oW3mRo4MJrQkusV3fGFSTwaiu4wPBqMryA9DYVJCkW9n7twCffG5f5wX2sSkoDXGiZB1HPa7K7f865Kk4LqnrME</span>
+                      <span id="wallet" className="profile_wallet">TODO-dzFFzCqrhshMSxb9oW3mRo4MJrQkusV3fGFSTwaiu4wPBqMryA9DYVJCkW9n7twCffG5f5wX2sSkoDXGiZB1HPa7K7f865Kk4LqnrME</span>
                       <button id="btn_copy" title="Copy Text">Copy</button>
                     </h4>
                   </div>
@@ -74,7 +75,6 @@ const ArtList = function () {
                   <span className="btn-main">Follow</span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -92,9 +92,10 @@ const ArtList = function () {
             </div>
           </div>
         </div>
+
         {openMenu && (
           <div id='zero1' className='onStep fadeIn'>
-            <ColumnZero />
+            <ColumnNew />
           </div>
         )}
         {openMenu1 && (
@@ -108,7 +109,6 @@ const ArtList = function () {
           </div>
         )}
       </section>
-
 
       <Footer />
     </div>
