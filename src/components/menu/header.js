@@ -164,10 +164,7 @@ const Header = function () {
                         {openMenu1 && (
                           <div className='item-dropdown'>
                             <div className="dropdown" onClick={closeMenu1}>
-                              <NavLink to="/helpcenter" onClick={() => btn_icon(!showmenu)}>Help Center</NavLink>
-                              <NavLink to="/news" onClick={() => btn_icon(!showmenu)}>News</NavLink>
-                              <NavLink to="/works" onClick={() => btn_icon(!showmenu)}>Gallery</NavLink>
-                              <NavLink to="/contact" onClick={() => btn_icon(!showmenu)}>Contact Us</NavLink>
+                              <NavLink to="/Author" onClick={() => btn_icon(!showmenu)}>Profile</NavLink>
                               {/* eslint-disable-next-line */}
                               <a onClick={handleLogout}>Logout</a>
                             </div>
@@ -233,10 +230,7 @@ const Header = function () {
                         {openMenu1 && (
                           <div className='item-dropdown'>
                             <div className="dropdown" onClick={closeMenu1}>
-                              <NavLink to="/helpcenter">Help Center</NavLink>
-                              <NavLink to="/news">News</NavLink>
-                              <NavLink to="/works">Gallery</NavLink>
-                              <NavLink to="/contact">Contact Us</NavLink>
+                              <NavLink to="/Author">Profile</NavLink>
                               {/* eslint-disable-next-line */}
                               <a onClick={handleLogout}>Logout</a>
                             </div>

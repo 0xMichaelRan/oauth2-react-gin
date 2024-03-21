@@ -8,17 +8,29 @@ const footer = () => (
             <div className="row">
                 <div className="col-md-3 col-sm-6 col-xs-1">
                     <div className="widget">
-                        <h5>MySQL-based Pages</h5>
+                        <h5>MySQL-based</h5>
                         <ul>
-                            <li><Link to="/home1">home1</Link></li>
-                            <li><Link to="/home2">home2</Link></li>
                             <li><Link to="/Auction">Auction</Link></li>
                             <li><Link to="/artList">artList</Link></li>
                             <li><Link to="/Author">Author</Link></li>
                             <li><Link to="/rangking">rangking</Link></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="col-md-3 col-sm-6 col-xs-1">
+                    <div className="widget">
+                        <h5>Static Pages</h5>
+                        <ul>
+                            <li><Link to="/home1">home1</Link></li>
+                            <li><Link to="/home2">home2</Link></li>
                             <li><Link to="/explore">explore</Link></li>
                             <li><Link to="/explore2">explore2</Link></li>
                             <li><Link to="/wallet">wallet</Link></li>
+                            <li><Link to="/helpcenter">helpcenter</Link></li>
+                            <li><Link to="/news">news</Link></li>
+                            <li><Link to="/works">works</Link></li>
+                            <li><Link to="/contact">contact</Link></li>
                         </ul>
                     </div>
                 </div>
