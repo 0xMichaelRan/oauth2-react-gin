@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Source code: D:\git\learn-react\gigaland-react-all\Gigaland-Static\Gigaland-retro\
+
 ## Available Scripts
 
 In the project directory, you can run:
