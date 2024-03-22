@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import instance from '../../axiosInstance';
 import Footer from '../components/footer';
 import AuthContext from '../../context/AuthContext';
 
@@ -28,7 +28,7 @@ const Login = () => {
     e.preventDefault();
 
     // Perform POST request to backend using axios
-    axios.post('http://localhost:9000/v1/user/login', {
+    instance.post('/v1/user/login', {
       email: e.target.email.value,
       password: e.target.password.value
     })

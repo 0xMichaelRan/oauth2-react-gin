@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
-import axios from 'axios';
+import instance from '../../axiosInstance';
 import { useNavigate } from 'react-router-dom';
 
 const GlobalStyles = createGlobalStyle`
@@ -118,11 +118,11 @@ export default function Register() {
         }
 
         setError('');
-        // Submit the form, 
+        // Submit the registration form
         const data = { name, email, password };
         const json = JSON.stringify(data);
-        axios.post(
-            'http://localhost:9000/v1/user/register',
+        instance.post(
+            '/v1/user/register',
             json,
             {
                 headers: {
