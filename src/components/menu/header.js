@@ -62,12 +62,7 @@ const Header = function () {
         setUserName(localStorage.getItem('user_name'));
       });
     };
-  }, []);
-
-  const navigateToLogin = () => {
-    navigate('/login');
-    console.log(localStorage);
-  };
+  }, [setIsLoggedIn]);
 
   const handleLogout = () => {
     // Clear user data
@@ -173,6 +168,7 @@ const Header = function () {
                               <NavLink to="/news" onClick={() => btn_icon(!showmenu)}>News</NavLink>
                               <NavLink to="/works" onClick={() => btn_icon(!showmenu)}>Gallery</NavLink>
                               <NavLink to="/contact" onClick={() => btn_icon(!showmenu)}>Contact Us</NavLink>
+                              {/* eslint-disable-next-line */}
                               <a onClick={handleLogout}>Logout</a>
                             </div>
                           </div>
@@ -241,6 +237,7 @@ const Header = function () {
                               <NavLink to="/news">News</NavLink>
                               <NavLink to="/works">Gallery</NavLink>
                               <NavLink to="/contact">Contact Us</NavLink>
+                              {/* eslint-disable-next-line */}
                               <a onClick={handleLogout}>Logout</a>
                             </div>
                           </div>

@@ -1001,7 +1001,7 @@ p.lead {
   }
 
   .navbar-item.login-button {
-    
+
     border-radius: 8px;
     background-color: black;
 
@@ -1083,10 +1083,10 @@ p.lead {
         color: $color;
         width: 100%;
         text-align: left;
-        
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &::after {
           float: right;
@@ -1104,7 +1104,7 @@ p.lead {
       // display: block;
       padding: 10px 0;
       border-bottom: 1px solid rgba(0, 0, 0, .1);
-      
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -4683,10 +4683,10 @@ img.img-rounded {
         text-align: left;
         left: 10px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
