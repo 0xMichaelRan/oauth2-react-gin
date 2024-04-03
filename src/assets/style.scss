@@ -981,6 +981,7 @@ p.lead {
     padding: 30px 6px;
     height: max-content;
     cursor: default;
+    font-size: large;
 
     .lines {
       position: absolute;
@@ -996,6 +997,16 @@ p.lead {
         width: 90%;
         transition: .7s;
       }
+    }
+  }
+
+  .navbar-item.login-button {
+    
+    border-radius: 8px;
+    background-color: black;
+
+    a {
+      color: white;
     }
   }
 
@@ -1072,6 +1083,10 @@ p.lead {
         color: $color;
         width: 100%;
         text-align: left;
+        
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
         &::after {
           float: right;
@@ -1086,9 +1101,13 @@ p.lead {
     }
 
     .navbar-item {
-      display: block;
-      padding: 15px 0;
+      // display: block;
+      padding: 10px 0;
       border-bottom: 1px solid rgba(0, 0, 0, .1);
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .nav-icon {
@@ -4664,6 +4683,10 @@ img.img-rounded {
         text-align: left;
         left: 10px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        
+      display: flex;
+      align-items: center;
+      justify-content: center;
       }
     }
   }

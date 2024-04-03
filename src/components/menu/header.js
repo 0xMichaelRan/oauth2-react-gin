@@ -30,6 +30,9 @@ const Header = function () {
   const [openMenu1, setOpenMenu1] = React.useState(false);
   const navigate = useNavigate();
 
+  // Retrieve the name from localStorage and store it in state
+  const [userName, setUserName] = React.useState(localStorage.getItem('user_name'));
+
   const handleBtnClick1 = (): void => {
     setOpenMenu1(!openMenu1);
   };
@@ -47,7 +50,24 @@ const Header = function () {
     if (token) {
       setIsLoggedIn(true);
     }
+
+    // Update the name in state when it changes in localStorage
+    window.addEventListener('storage', () => {
+      setUserName(localStorage.getItem('user_name'));
+    });
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('storage', () => {
+        setUserName(localStorage.getItem('user_name'));
+      });
+    };
   }, []);
+
+  const navigateToLogin = () => {
+    navigate('/login');
+    console.log(localStorage);
+  };
 
   const handleLogout = () => {
     // Clear user data
@@ -139,28 +159,41 @@ const Header = function () {
                     </NavLink>
                   </div>
 
-                  <div className='navbar-item'>
-                    <div ref={ref1}>
-                      <div className="dropdown-custom dropdown-toggle btn"
-                        onClick={handleBtnClick1}>
-                        ExploreTODO
-                      </div>
-                      {openMenu1 && (
-                        <div className='item-dropdown'>
-                          <div className="dropdown" onClick={closeMenu1}>
-                            <NavLink to="/helpcenter" onClick={() => btn_icon(!showmenu)}>Help Center</NavLink>
-                            <NavLink to="/news" onClick={() => btn_icon(!showmenu)}>News</NavLink>
-                            <NavLink to="/works" onClick={() => btn_icon(!showmenu)}>Gallery</NavLink>
-                            <NavLink to="/contact" onClick={() => btn_icon(!showmenu)}>Contact Us</NavLink>
-                          </div>
+                  {isLoggedIn &&
+                    <div className='navbar-item'>
+                      <div ref={ref1}>
+                        <div className="dropdown-custom dropdown-toggle btn"
+                          onClick={handleBtnClick1}>
+                          Hi, {isLoggedIn ? userName : 'Human'}
                         </div>
-                      )}
+                        {openMenu1 && (
+                          <div className='item-dropdown'>
+                            <div className="dropdown" onClick={closeMenu1}>
+                              <NavLink to="/helpcenter" onClick={() => btn_icon(!showmenu)}>Help Center</NavLink>
+                              <NavLink to="/news" onClick={() => btn_icon(!showmenu)}>News</NavLink>
+                              <NavLink to="/works" onClick={() => btn_icon(!showmenu)}>Gallery</NavLink>
+                              <NavLink to="/contact" onClick={() => btn_icon(!showmenu)}>Contact Us</NavLink>
+                              <a onClick={handleLogout}>Logout</a>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  }
+
+                  {!isLoggedIn && (
+                    <div className='navbar-item login-button'>
+                      <NavLink to="/login" onClick={() => btn_icon(!showmenu)}>
+                        Sign In
+                      </NavLink>
+                    </div>
+                  )}
 
                 </div>
               }
             </Breakpoint>
+
+            {/* above is for mobile, below is for desktop */}
 
             <Breakpoint xl>
               <div className='menu'>
@@ -193,51 +226,59 @@ const Header = function () {
                   </NavLink>
                 </div>
 
-                <div className='navbar-item'>
-                  <div ref={ref1}>
-                    <div className="dropdown-custom dropdown-toggle btn"
-                      onMouseEnter={handleBtnClick1}
-                      onMouseLeave={closeMenu1}>
-                      ExploreTODO
-                      <span className='lines'></span>
-                      {openMenu1 && (
-                        <div className='item-dropdown'>
-                          <div className="dropdown" onClick={closeMenu1}>
-                            <NavLink to="/helpcenter">Help Center</NavLink>
-                            <NavLink to="/news">News</NavLink>
-                            <NavLink to="/works">Gallery</NavLink>
-                            <NavLink to="/contact">Contact Us</NavLink>
+                {isLoggedIn && (
+                  <div className='navbar-item'>
+                    <div ref={ref1}>
+                      <div className="dropdown-custom dropdown-toggle btn"
+                        onMouseEnter={handleBtnClick1}
+                        onMouseLeave={closeMenu1}>
+                        Hi, {isLoggedIn ? userName : 'Human'}
+                        <span className='lines'></span>
+                        {openMenu1 && (
+                          <div className='item-dropdown'>
+                            <div className="dropdown" onClick={closeMenu1}>
+                              <NavLink to="/helpcenter">Help Center</NavLink>
+                              <NavLink to="/news">News</NavLink>
+                              <NavLink to="/works">Gallery</NavLink>
+                              <NavLink to="/contact">Contact Us</NavLink>
+                              <a onClick={handleLogout}>Logout</a>
+                            </div>
                           </div>
-                        </div>
-                      )}
-                    </div>
+                        )}
+                      </div>
 
+                    </div>
                   </div>
-                </div>
+                )}
+
+                {!isLoggedIn && (
+                  <div className='navbar-item'>
+                    <div className='mainside'>
+                      <NavLink to="/login" className="btn-main">
+                        {/* <i className="icon_wallet_alt"></i> */}
+                        <span>Login</span>
+                      </NavLink>
+                    </div>
+                  </div>
+                )}
 
               </div>
             </Breakpoint>
+
+
           </BreakpointProvider>
 
+          {/* The below button was hidden intentionally */}
           <BreakpointProvider>
-            {!isLoggedIn && (
-              <div className='mainside'>
-                <NavLink to="/login" className="btn-main">
-                  {/* <i className="icon_wallet_alt"></i> */}
-                  <span>Login</span>
-                </NavLink>
-              </div>
-            )}
 
-            {isLoggedIn && (
+            {false && isLoggedIn && (
               <div className='mainside'>
-                <button onClick={handleLogout} className="btn-info">
+                <button onClick={handleLogout} className="btn-main">
                   {/* <i className="icon_wallet_alt"></i> */}
                   <span>Logout</span>
                 </button>
               </div>
             )}
-
           </BreakpointProvider>
 
         </div>

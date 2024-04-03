@@ -90,7 +90,7 @@ const footer = () => (
                         <div className="de-flex">
                             <div className="de-flex-col">
                                 <span onClick={() => window.open("", "_self")}>
-                                    <span className="copy">&copy; Copyright 2021 - Gigaland by Designesia</span>
+                                    <span className="copy">&copy; Copyright 2024 by Michael.AI</span>
                                 </span>
                             </div>
                             <div className="de-flex-col">

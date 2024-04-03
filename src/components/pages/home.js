@@ -1,7 +1,6 @@
 import React from 'react';
 import SliderCarousel from '../components/SliderCarousel';
 import SliderCarouselsingle from '../components/SliderCarouselsingle';
-import SliderMainParticle from '../components/SliderMainParticle';
 import CarouselCollection from '../components/CarouselCollection';
 import CarouselNew from '../components/CarouselNew';
 import AuthorList from '../components/authorList';

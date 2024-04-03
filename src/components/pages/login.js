@@ -49,6 +49,8 @@ const Login = () => {
           localStorage.setItem('user_name', response.data.user.name);
           localStorage.setItem('user_email', response.data.user.email);
           localStorage.setItem('user_id', response.data.user.id);
+
+          console.log("Login successful for user " + localStorage.getItem('user_name') + " with email " + localStorage.getItem('user_email') + " and id " + localStorage.getItem('user_id'));
           console.log(localStorage);
 
           window.location.href = "/home";
@@ -80,8 +82,8 @@ const Login = () => {
             <div className='row align-items-center px-0'>
               <div className="col-lg-4 offset-lg-4 m-auto px-0">
                 <div className="box-login">
-                  <h3 className="mb10">Sign In</h3>
-                  <p>Login using an existing account or create a new account <a href='/register'>here</a>.</p>
+                  <h3 className="mb10">Log In</h3>
+                  <p>Login with your email address or <a href='/register'>register.</a></p>
                   <form name="contactForm" id='contact_form' className="form-border" action='#' onSubmit={handleSubmit}>
 
                     <div className="field-set">

@@ -19,8 +19,8 @@ const register = () => (
             <div className="row">
                 <div className='spacer-double'></div>
                 <div className="col-md-8 offset-md-2">
-                    <h3>Don't have an account? Register now.</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <h3>Don't have an account? </h3>
+                    <p>Please input a valid email address, we may contact you for important or sensitive information through email.</p>
 
                     <div className="spacer-10"></div>
 
@@ -69,6 +69,8 @@ const register = () => (
                                     <input type='text' name='re-password' id='re-password' className="form-control" />
                                 </div>
                             </div>
+
+                            <p>By signing up above, you agree to our <a href="/todo">Terms</a> & <a href="/todo">Conditions</a>.</p>
 
                             <div className="col-md-12">
                                 <div id='submit' className="pull-left">
