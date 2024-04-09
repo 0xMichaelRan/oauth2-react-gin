@@ -120,36 +120,15 @@ const Header = function () {
                   </div>
 
                   <div className='navbar-item'>
-                    <NavLink to="/home1" onClick={() => btn_icon(!showmenu)}>
-                      Home1
-                      <span className='lines'></span>
-                    </NavLink>
-                  </div>
-
-                  <div className='navbar-item'>
-                    <NavLink to="/Auction" onClick={() => btn_icon(!showmenu)}>
-                      Contest
-                      <span className='lines'></span>
-                    </NavLink>
-                  </div>
-
-                  <div className='navbar-item'>
-                    <NavLink to="/artList" onClick={() => btn_icon(!showmenu)}>
-                      ExploreArtList
-                      <span className='lines'></span>
-                    </NavLink>
-                  </div>
-
-                  <div className='navbar-item'>
                     <NavLink to="/ItemDetail" onClick={() => btn_icon(!showmenu)}>
-                      Art-detail
+                      ItemDetail
                       <span className='lines'></span>
                     </NavLink>
                   </div>
 
                   <div className='navbar-item'>
                     <NavLink to="/create" onClick={() => btn_icon(!showmenu)}>
-                      Upload
+                      Create
                       <span className='lines'></span>
                     </NavLink>
                   </div>
@@ -169,13 +148,7 @@ const Header = function () {
                       {openMenu1 && (
                         <div className='item-dropdown'>
                           <div className="dropdown" onClick={closeMenu1}>
-                            <NavLink to="/explore" onClick={() => btn_icon(!showmenu)}>Explore 1</NavLink>
-                            <NavLink to="/rangking" onClick={() => btn_icon(!showmenu)}>Rangking</NavLink>
-                            <NavLink to="/explore2" onClick={() => btn_icon(!showmenu)}>Explore 2</NavLink>
-                            <NavLink to="/rangking" onClick={() => btn_icon(!showmenu)}>Rangking</NavLink>
-                            <NavLink to="/wallet" onClick={() => btn_icon(!showmenu)}>Wallet</NavLink>
                             <NavLink to="/helpcenter" onClick={() => btn_icon(!showmenu)}>Help Center</NavLink>
-                            <NavLink to="/Author" onClick={() => btn_icon(!showmenu)}>Author</NavLink>
                             <NavLink to="/news" onClick={() => btn_icon(!showmenu)}>News</NavLink>
                             <NavLink to="/works" onClick={() => btn_icon(!showmenu)}>Gallery</NavLink>
                             <NavLink to="/contact" onClick={() => btn_icon(!showmenu)}>Contact Us</NavLink>
@@ -200,36 +173,15 @@ const Header = function () {
                 </div>
 
                 <div className='navbar-item'>
-                  <NavLink to="/home1">
-                    Home1
-                    <span className='lines'></span>
-                  </NavLink>
-                </div>
-
-                <div className='navbar-item'>
-                  <NavLink to="/Auction">
-                    Contest
-                    <span className='lines'></span>
-                  </NavLink>
-                </div>
-
-                <div className='navbar-item'>
-                  <NavLink to="/artList">
-                    ExploreArtList
-                    <span className='lines'></span>
-                  </NavLink>
-                </div>
-
-                <div className='navbar-item'>
                   <NavLink to="/ItemDetail">
-                    Art-detail
+                  ItemDetail
                     <span className='lines'></span>
                   </NavLink>
                 </div>
 
                 <div className='navbar-item'>
                   <NavLink to="/create">
-                    Upload
+                    Create
                     <span className='lines'></span>
                   </NavLink>
                 </div>
@@ -251,12 +203,7 @@ const Header = function () {
                       {openMenu1 && (
                         <div className='item-dropdown'>
                           <div className="dropdown" onClick={closeMenu1}>
-                            <NavLink to="/explore">Explore 1</NavLink>
-                            <NavLink to="/explore2">Explore 2</NavLink>
-                            <NavLink to="/rangking">Rangking</NavLink>
-                            <NavLink to="/wallet">Wallet</NavLink>
                             <NavLink to="/helpcenter">Help Center</NavLink>
-                            <NavLink to="/Author">Author</NavLink>
                             <NavLink to="/news">News</NavLink>
                             <NavLink to="/works">Gallery</NavLink>
                             <NavLink to="/contact">Contact Us</NavLink>
