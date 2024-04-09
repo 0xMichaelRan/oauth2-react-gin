@@ -174,7 +174,7 @@ const Header = function () {
 
                 <div className='navbar-item'>
                   <NavLink to="/ItemDetail">
-                  ItemDetail
+                    ItemDetail
                     <span className='lines'></span>
                   </NavLink>
                 </div>
