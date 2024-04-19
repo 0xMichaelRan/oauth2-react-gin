@@ -113,73 +113,72 @@ const Header = function () {
                 <div className='menu'>
 
                   <div className='navbar-item'>
-                    <NavLink to="/home">
+                    <NavLink to="/home" onClick={() => btn_icon(!showmenu)}>
                       Home
                       <span className='lines'></span>
                     </NavLink>
                   </div>
 
                   <div className='navbar-item'>
-                    <NavLink to="/home1">
+                    <NavLink to="/home1" onClick={() => btn_icon(!showmenu)}>
                       Home1
                       <span className='lines'></span>
                     </NavLink>
                   </div>
 
                   <div className='navbar-item'>
-                    <NavLink to="/Auction">
+                    <NavLink to="/Auction" onClick={() => btn_icon(!showmenu)}>
                       Contest
                       <span className='lines'></span>
                     </NavLink>
                   </div>
 
                   <div className='navbar-item'>
-                    <NavLink to="/artList">
-                      Explore
+                    <NavLink to="/artList" onClick={() => btn_icon(!showmenu)}>
+                      ExploreArtList
                       <span className='lines'></span>
                     </NavLink>
                   </div>
 
                   <div className='navbar-item'>
-                    <NavLink to="/ItemDetail">
+                    <NavLink to="/ItemDetail" onClick={() => btn_icon(!showmenu)}>
                       Art-detail
                       <span className='lines'></span>
                     </NavLink>
                   </div>
 
                   <div className='navbar-item'>
-                    <NavLink to="/create">
+                    <NavLink to="/create" onClick={() => btn_icon(!showmenu)}>
                       Upload
                       <span className='lines'></span>
                     </NavLink>
                   </div>
 
                   <div className='navbar-item'>
-                    <NavLink to="/activity">
+                    <NavLink to="/activity" onClick={() => btn_icon(!showmenu)}>
                       Activity
-                      <span className='lines'></span>
                     </NavLink>
                   </div>
 
                   <div className='navbar-item'>
                     <div ref={ref1}>
                       <div className="dropdown-custom dropdown-toggle btn"
-                        onClick={handleBtnClick1}
-                      >
-                        Explore
+                        onClick={handleBtnClick1}>
+                        ExploreTODO
                       </div>
                       {openMenu1 && (
                         <div className='item-dropdown'>
                           <div className="dropdown" onClick={closeMenu1}>
-                            <NavLink to="/explore">Explore 1</NavLink>
-                            <NavLink to="/explore2">Explore 2</NavLink>
-                            <NavLink to="/rangking">Rangking</NavLink>
-                            <NavLink to="/wallet">Wallet</NavLink>
-                            <NavLink to="/helpcenter">Help Center</NavLink>
-                            <NavLink to="/Author">Author</NavLink>
-                            <NavLink to="/news">News</NavLink>
-                            <NavLink to="/works">Gallery</NavLink>
-                            <NavLink to="/contact">Contact Us</NavLink>
+                            <NavLink to="/explore" onClick={() => btn_icon(!showmenu)}>Explore 1</NavLink>
+                            <NavLink to="/rangking" onClick={() => btn_icon(!showmenu)}>Rangking</NavLink>
+                            <NavLink to="/explore2" onClick={() => btn_icon(!showmenu)}>Explore 2</NavLink>
+                            <NavLink to="/rangking" onClick={() => btn_icon(!showmenu)}>Rangking</NavLink>
+                            <NavLink to="/wallet" onClick={() => btn_icon(!showmenu)}>Wallet</NavLink>
+                            <NavLink to="/helpcenter" onClick={() => btn_icon(!showmenu)}>Help Center</NavLink>
+                            <NavLink to="/Author" onClick={() => btn_icon(!showmenu)}>Author</NavLink>
+                            <NavLink to="/news" onClick={() => btn_icon(!showmenu)}>News</NavLink>
+                            <NavLink to="/works" onClick={() => btn_icon(!showmenu)}>Gallery</NavLink>
+                            <NavLink to="/contact" onClick={() => btn_icon(!showmenu)}>Contact Us</NavLink>
                           </div>
                         </div>
                       )}
@@ -216,7 +215,7 @@ const Header = function () {
 
                 <div className='navbar-item'>
                   <NavLink to="/artList">
-                    Explore
+                    ExploreArtList
                     <span className='lines'></span>
                   </NavLink>
                 </div>
@@ -245,8 +244,9 @@ const Header = function () {
                 <div className='navbar-item'>
                   <div ref={ref1}>
                     <div className="dropdown-custom dropdown-toggle btn"
-                      onMouseEnter={handleBtnClick1} onMouseLeave={closeMenu1}>
-                      Explore
+                      onMouseEnter={handleBtnClick1}
+                      onMouseLeave={closeMenu1}>
+                      ExploreTODO
                       <span className='lines'></span>
                       {openMenu1 && (
                         <div className='item-dropdown'>
