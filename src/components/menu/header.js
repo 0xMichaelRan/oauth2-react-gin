@@ -276,24 +276,15 @@ const Header = function () {
             {!isLoggedIn && (
               <div className='mainside'>
                 <NavLink to="/login" className="btn-main">
-                  <i className="icon_wallet_alt"></i>
+                  {/* <i className="icon_wallet_alt"></i> */}
                   <span>Login</span>
                 </NavLink>
               </div>
             )}
 
-            {/* {isLoggedIn && (
-              <div className='mainside'>
-                <NavLink to="/login" className="btn-warning" >
-                  <i className="icon_wallet_alt"></i>
-                  <span>Logout</span>
-                </NavLink>
-              </div>
-            )} */}
-            
             {isLoggedIn && (
               <div className='mainside'>
-                <button onClick={handleLogout} className="btn-light">
+                <button onClick={handleLogout} className="btn-info">
                   {/* <i className="icon_wallet_alt"></i> */}
                   <span>Logout</span>
                 </button>
