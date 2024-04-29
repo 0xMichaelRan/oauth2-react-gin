@@ -39,8 +39,9 @@ const Login = () => {
 
         // check response.data.message and decide if this is a successful login
         if (response.data.message === "Request failed with status code 401" || response.status === 401) {
-          setIsLoggedIn(false);
           setIsPasswordIncorrect(true);
+          setIsLoggedIn(false);
+          localStorage.removeItem('accessToken');
           console.error("Login failed with HTTP code 401. ");
         } else if (response.data.message === "Successfully logged in") {
           // TODO: display an hover message "welcome" and quickly redirect to home page
@@ -51,12 +52,15 @@ const Login = () => {
           localStorage.setItem('accessToken', response.data.accessToken);
           localStorage.setItem('refreshToken', response.data.refreshToken);
 
-          // window.location.href = "/home1";
+          window.location.href = "/home1";
+          setShowMessage(true);
         } else {
-          setIsLoggedIn(false);
           setIsPasswordIncorrect(true);
+          setIsLoggedIn(false);
+          localStorage.removeItem('accessToken');
           console.error("Login failed. Please try again.");
         }
+
       })
       .catch(error => {
         // Handle error

@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
-import { header } from 'react-bootstrap';
 import { Link } from '@reach/router';
 import useOnclickOutside from "react-cool-onclickoutside";
+import { useNavigate } from 'react-router-dom';
+import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
 import AuthContext from '../../context/AuthContext';
-// import { useNavigate } from 'react-router-dom';
 
 setDefaultBreakpoints([
   { xs: 0 },
@@ -27,10 +26,9 @@ const NavLink = props => (
 
 const Header = function () {
 
-  // const navigate = useNavigate();
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
-
   const [openMenu1, setOpenMenu1] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleBtnClick1 = (): void => {
     setOpenMenu1(!openMenu1);
@@ -44,12 +42,20 @@ const Header = function () {
     closeMenu1();
   });
 
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   const handleLogout = () => {
     // Clear user data
     setIsLoggedIn(false);
     localStorage.removeItem('accessToken');
+
     // Redirect to login page
-    // navigate('/login');
+    navigate('/login');
   };
 
   const [showmenu, btn_icon] = useState(false);
@@ -283,6 +289,7 @@ const Header = function () {
                 </NavLink>
               </div>
             )} */}
+            
             {isLoggedIn && (
               <div className='mainside'>
                 <button onClick={handleLogout} className="btn-light">
