@@ -12,6 +12,8 @@ const Login = () => {
   const [isPasswordIncorrect, setIsPasswordIncorrect] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
+  console.log("Login Page, isLoggedIn: ", isLoggedIn);
+
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
 
@@ -25,9 +27,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("isLoggedIn " + isLoggedIn);
-
-    // Perform POST request to 'http://localhost:9000/v1/user/login' using axios
+    // Perform POST request to backend using axios
     axios.post('http://localhost:9000/v1/user/login', {
       email: e.target.email.value,
       password: e.target.password.value
@@ -38,33 +38,35 @@ const Login = () => {
         setShowMessage(true);
 
         // check response.data.message and decide if this is a successful login
-        if (response.data.message === "Request failed with status code 401" || response.status === 401) {
-          setIsPasswordIncorrect(true);
-          setIsLoggedIn(false);
-          localStorage.removeItem('accessToken');
-          console.error("Login failed with HTTP code 401. ");
-        } else if (response.data.message === "Successfully logged in") {
-          // TODO: display an hover message "welcome" and quickly redirect to home page
+        if (response.data.message === "Successfully logged in") {
+          // display message "welcome" and redirect to home page
           setIsLoggedIn(true);
           setIsPasswordIncorrect(false);
 
           // save accessToken and refreshToken to localStorage
-          localStorage.setItem('accessToken', response.data.accessToken);
-          localStorage.setItem('refreshToken', response.data.refreshToken);
+          localStorage.setItem('accessToken', response.data.token.access_token);
+          localStorage.setItem('refreshToken', response.data.token.refresh_token);
+          localStorage.setItem('user_name', response.data.user.name);
+          localStorage.setItem('user_email', response.data.user.email);
+          localStorage.setItem('user_id', response.data.user.id);
+          console.log(localStorage);
 
-          window.location.href = "/home1";
+          window.location.href = "/home";
           setShowMessage(true);
         } else {
           setIsPasswordIncorrect(true);
           setIsLoggedIn(false);
-          localStorage.removeItem('accessToken');
+          localStorage.clear();
           console.error("Login failed. Please try again.");
         }
-
       })
       .catch(error => {
         // Handle error
         console.error(error);
+        setIsPasswordIncorrect(true);
+        setIsLoggedIn(false);
+        localStorage.clear();
+        console.error("Login failed. Please try again.");
       });
   }
 

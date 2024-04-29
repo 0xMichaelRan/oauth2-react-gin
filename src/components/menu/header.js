@@ -52,10 +52,11 @@ const Header = function () {
   const handleLogout = () => {
     // Clear user data
     setIsLoggedIn(false);
-    localStorage.removeItem('accessToken');
+    localStorage.clear();
 
     // Redirect to login page
     navigate('/login');
+    console.log(localStorage);
   };
 
   const [showmenu, btn_icon] = useState(false);
@@ -112,8 +113,8 @@ const Header = function () {
                 <div className='menu'>
 
                   <div className='navbar-item'>
-                    <NavLink to="/">
-                      Home0
+                    <NavLink to="/home">
+                      Home
                       <span className='lines'></span>
                     </NavLink>
                   </div>
@@ -193,8 +194,8 @@ const Header = function () {
               <div className='menu'>
 
                 <div className='navbar-item'>
-                  <NavLink to="/">
-                    Home0
+                  <NavLink to="/home">
+                    Home
                     <span className='lines'></span>
                   </NavLink>
                 </div>
