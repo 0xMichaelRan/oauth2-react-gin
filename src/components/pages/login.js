@@ -4,14 +4,23 @@ import Footer from '../components/footer';
 import AuthContext from '../../context/AuthContext';
 
 import { createGlobalStyle } from 'styled-components';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 const Login = () => {
 
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
-
   const [isPasswordIncorrect, setIsPasswordIncorrect] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [setIsLoggedIn]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +46,11 @@ const Login = () => {
           // TODO: display an hover message "welcome" and quickly redirect to home page
           setIsLoggedIn(true);
           setIsPasswordIncorrect(false);
+
+          // save accessToken and refreshToken to localStorage
+          localStorage.setItem('accessToken', response.data.accessToken);
+          localStorage.setItem('refreshToken', response.data.refreshToken);
+
           // window.location.href = "/home1";
         } else {
           setIsLoggedIn(false);

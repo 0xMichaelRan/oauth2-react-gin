@@ -4,6 +4,7 @@ import { header } from 'react-bootstrap';
 import { Link } from '@reach/router';
 import useOnclickOutside from "react-cool-onclickoutside";
 import AuthContext from '../../context/AuthContext';
+// import { useNavigate } from 'react-router-dom';
 
 setDefaultBreakpoints([
   { xs: 0 },
@@ -26,7 +27,8 @@ const NavLink = props => (
 
 const Header = function () {
 
-  const { isLoggedIn } = useContext(AuthContext);
+  // const navigate = useNavigate();
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
   const [openMenu1, setOpenMenu1] = React.useState(false);
 
@@ -41,6 +43,14 @@ const Header = function () {
   const ref1 = useOnclickOutside(() => {
     closeMenu1();
   });
+
+  const handleLogout = () => {
+    // Clear user data
+    setIsLoggedIn(false);
+    localStorage.removeItem('accessToken');
+    // Redirect to login page
+    // navigate('/login');
+  };
 
   const [showmenu, btn_icon] = useState(false);
   useEffect(() => {
@@ -265,12 +275,20 @@ const Header = function () {
               </div>
             )}
 
-            {isLoggedIn && (
+            {/* {isLoggedIn && (
               <div className='mainside'>
-                <NavLink to="/login" className="btn-main" >
+                <NavLink to="/login" className="btn-warning" >
                   <i className="icon_wallet_alt"></i>
                   <span>Logout</span>
                 </NavLink>
+              </div>
+            )} */}
+            {isLoggedIn && (
+              <div className='mainside'>
+                <button onClick={handleLogout} className="btn-light">
+                  {/* <i className="icon_wallet_alt"></i> */}
+                  <span>Logout</span>
+                </button>
               </div>
             )}
 
