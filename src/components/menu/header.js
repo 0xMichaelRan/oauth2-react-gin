@@ -267,12 +267,13 @@ const Header = function () {
 
             {isLoggedIn && (
               <div className='mainside'>
-                <NavLink to="/register" className="btn-main" >
+                <NavLink to="/login" className="btn-main" >
                   <i className="icon_wallet_alt"></i>
-                  <span>Register</span>
+                  <span>Logout</span>
                 </NavLink>
               </div>
             )}
+
           </BreakpointProvider>
 
         </div>
