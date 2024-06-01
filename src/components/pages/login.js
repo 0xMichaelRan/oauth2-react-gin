@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import Footer from '../components/footer';
-import { createGlobalStyle } from 'styled-components';
-import { useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
+
+import { createGlobalStyle } from 'styled-components';
+import { useContext, useState } from 'react';
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.white {
@@ -16,11 +17,23 @@ const GlobalStyles = createGlobalStyle`
   .box-login{
     padding: 40px 50px;
   }
+  .login-error-message-1 {
+    margin-bottom: 20px;
+    color: red;
+  }
+
+  .login-error-message-2 {
+    margin-bottom: 20px;
+    color: blue;
+  }
 `;
 
 const Login = () => {
 
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
+  const [isPasswordIncorrect, setIsPasswordIncorrect] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,19 +48,23 @@ const Login = () => {
       .then(response => {
         // Handle successful response
         console.log(response.data);
+        setShowMessage(true);
 
         // check response.data.message and decide if this is a successful login
         // if successful, redirect to home page
         // if unsuccessful, show an error message
-        if (response.data.message === "Successfully logged in") {
+        if (response.data.message === "Request failed with status code 401" || response.status === 401) {
+          setIsPasswordIncorrect(true);
+          console.error("Login failed with HTTP code 401. ");
+        } else if (response.data.message === "Successfully logged in") {
           // TODO: display an hover message "welcome" and quickly redirect to home page
           setIsLoggedIn(true);
+          setIsPasswordIncorrect(false);
           window.location.href = "/home1";
         } else {
-          // Show error message
-          alert("Login failed. Please try again.");
+          setIsPasswordIncorrect(true);
+          console.error("Login failed. Please try again.");
         }
-        
       })
       .catch(error => {
         // Handle error
@@ -77,6 +94,10 @@ const Login = () => {
                       <input type='password' name='password' id='password' className="form-control" placeholder="password" />
                     </div>
 
+                    {/* add a message text to indicate password incorrect */}
+                    {showMessage && isPasswordIncorrect && <label className="login-error-message-1">Password incorrect</label>}
+                    {showMessage && !isPasswordIncorrect && <label className="login-error-message-2">Welcome back.</label>}
+
                     <div className="field-set">
                       <input type='submit' id='send_message' value='Submit' className="btn btn-main btn-fullwidth color-2" />
                     </div>
@@ -88,6 +109,7 @@ const Login = () => {
                       <li><span >Google</span></li>
                     </ul>
                     <div className="spacer-half"></div>
+
                   </form>
                 </div>
               </div>
