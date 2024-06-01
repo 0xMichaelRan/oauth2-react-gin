@@ -6,28 +6,6 @@ import AuthContext from '../../context/AuthContext';
 import { createGlobalStyle } from 'styled-components';
 import { useContext, useState } from 'react';
 
-const GlobalStyles = createGlobalStyle`
-  header#myHeader.navbar.white {
-    background: #FAF6F1;
-    border-bottom: solid 1px #ccc !important;
-  }
-  .box-login p{
-    color: #727272 !important;
-  }
-  .box-login{
-    padding: 40px 50px;
-  }
-  .login-error-message-1 {
-    margin-bottom: 20px;
-    color: red;
-  }
-
-  .login-error-message-2 {
-    margin-bottom: 20px;
-    color: blue;
-  }
-`;
-
 const Login = () => {
 
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
@@ -38,7 +16,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("isLoggedIn  " + isLoggedIn);
+    console.log("isLoggedIn " + isLoggedIn);
 
     // Perform POST request to 'http://localhost:9000/v1/user/login' using axios
     axios.post('http://localhost:9000/v1/user/login', {
@@ -51,17 +29,17 @@ const Login = () => {
         setShowMessage(true);
 
         // check response.data.message and decide if this is a successful login
-        // if successful, redirect to home page
-        // if unsuccessful, show an error message
         if (response.data.message === "Request failed with status code 401" || response.status === 401) {
+          setIsLoggedIn(false);
           setIsPasswordIncorrect(true);
           console.error("Login failed with HTTP code 401. ");
         } else if (response.data.message === "Successfully logged in") {
           // TODO: display an hover message "welcome" and quickly redirect to home page
           setIsLoggedIn(true);
           setIsPasswordIncorrect(false);
-          window.location.href = "/home1";
+          // window.location.href = "/home1";
         } else {
+          setIsLoggedIn(false);
           setIsPasswordIncorrect(true);
           console.error("Login failed. Please try again.");
         }
@@ -122,5 +100,26 @@ const Login = () => {
     </div>
   );
 }
+
+const GlobalStyles = createGlobalStyle`
+  header#myHeader.navbar.white {
+    background: #FAF6F1;
+    border-bottom: solid 1px #ccc !important;
+  }
+  .box-login p{
+    color: #727272 !important;
+  }
+  .box-login{
+    padding: 40px 50px;
+  }
+  .login-error-message-1 {
+    margin-bottom: 20px;
+    color: red;
+  }
+  .login-error-message-2 {
+    margin-bottom: 20px;
+    color: blue;
+  }
+`;
 
 export default Login;

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
 import { header } from 'react-bootstrap';
 import { Link } from '@reach/router';
 import useOnclickOutside from "react-cool-onclickoutside";
-
+import AuthContext from '../../context/AuthContext';
 
 setDefaultBreakpoints([
   { xs: 0 },
@@ -24,8 +24,9 @@ const NavLink = props => (
   />
 );
 
-
 const Header = function () {
+
+  const { isLoggedIn } = useContext(AuthContext);
 
   const [openMenu1, setOpenMenu1] = React.useState(false);
 
@@ -51,7 +52,6 @@ const Header = function () {
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
         totop.classList.add("show");
-
       } else {
         header.classList.remove("sticky");
         totop.classList.remove("show");
@@ -256,19 +256,23 @@ const Header = function () {
           </BreakpointProvider>
 
           <BreakpointProvider>
-            <div className='mainside'>
-              <NavLink to="/login" className="btn-main">
-                <i className="icon_wallet_alt"></i>
-                <span>Login</span>
-              </NavLink>
-            </div>
+            {!isLoggedIn && (
+              <div className='mainside'>
+                <NavLink to="/login" className="btn-main">
+                  <i className="icon_wallet_alt"></i>
+                  <span>Login</span>
+                </NavLink>
+              </div>
+            )}
 
-            <div className='mainside'>
-              <NavLink to="/register" className="btn-main" >
-                <i className="icon_wallet_alt"></i>
-                <span>Register</span>
-              </NavLink>
-            </div>
+            {isLoggedIn && (
+              <div className='mainside'>
+                <NavLink to="/register" className="btn-main" >
+                  <i className="icon_wallet_alt"></i>
+                  <span>Register</span>
+                </NavLink>
+              </div>
+            )}
           </BreakpointProvider>
 
         </div>
