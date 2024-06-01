@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const logintwo = () => (
+const helpcenter = () => (
     <div>
         <GlobalStyles />
 
@@ -103,4 +103,4 @@ const logintwo = () => (
     </div>
 
 );
-export default logintwo;
+export default helpcenter;
