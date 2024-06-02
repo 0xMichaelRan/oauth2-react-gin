@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
+import { useContext } from 'react';
+import AuthContext from '../../context/AuthContext';
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.white {
@@ -16,10 +18,14 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const logintwo = () => {
+const Login = () => {
+
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log("isLoggedIn  " + isLoggedIn);
 
     // Perform POST request to 'http://localhost:9000/v1/user/login' using axios
     axios.post('http://localhost:9000/v1/user/login', {
@@ -34,7 +40,8 @@ const logintwo = () => {
         // if successful, redirect to home page
         // if unsuccessful, show an error message
         if (response.data.message === "Successfully logged in") {
-          // display an unblocking message "welcome" and quickly redirect to home page
+          // TODO: display an hover message "welcome" and quickly redirect to home page
+          setIsLoggedIn(true);
           window.location.href = "/home1";
         } else {
           // Show error message
@@ -94,4 +101,4 @@ const logintwo = () => {
   );
 }
 
-export default logintwo;
+export default Login;
