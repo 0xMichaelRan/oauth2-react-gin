@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const PAINTER_API_BASE_URL = "http://192.168.10.133:9080/painters";
+const PAINTER_API_BASE_URL = "http://192.168.31.121:9080/painters";
 
 class PainterService {
 
