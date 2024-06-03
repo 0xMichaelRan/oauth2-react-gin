@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ART_API_BASE_URL = "http://192.168.10.133:9080/arts";
+const ART_API_BASE_URL = "http://192.168.10.133:9080/arts-full";
 
 class ArtService {
 

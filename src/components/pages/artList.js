@@ -31,10 +31,10 @@ const ArtList = function () {
     <div>
       <GlobalStyles />
 
-      {/* <section id='profile_banner' className='jumbotron breadcumb no-bg' style={{ backgroundImage: `url(${'./img/background/9.jpg'})` }}>
+      <section id='profile_banner' className='jumbotron breadcumb no-bg' style={{ backgroundImage: `url(${'./img/background/9.jpg'})` }}>
         <div className='mainbreadcumb'>
         </div>
-      </section> */}
+      </section>
 
       <section className='container'>
 
@@ -59,9 +59,7 @@ const ArtList = function () {
                 <div className="spacer-20"></div>
                 <p className="mt-0">Create item, createreate item, createreate item, createreate item, createreate item, createreate item, createreate item, createwallet.</p>
               </div>
-
             </div>
-
           </div>
         </div>
 

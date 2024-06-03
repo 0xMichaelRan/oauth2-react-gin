@@ -10,9 +10,6 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-
-
-
 const ArtList = function () {
 
     const [openMenu, setOpenMenu] = React.useState(true);
@@ -41,7 +38,7 @@ const ArtList = function () {
                     </div>
                     <div className="col-md-6">
                         <div className="item_info">
-                            Auctions ends in
+                            Vote now within 
                             <div className="de_countdown">
                                 <Clock deadline="December, 30, 2021" />
                             </div>
