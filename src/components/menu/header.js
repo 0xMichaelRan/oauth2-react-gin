@@ -117,7 +117,7 @@ const Header = function () {
                   </div>
 
                   <div className='navbar-item'>
-                    <NavLink to="/uploadList">
+                    <NavLink to="/artList">
                       Explore
                       <span className='lines'></span>
                     </NavLink>
@@ -198,7 +198,7 @@ const Header = function () {
                 </div>
 
                 <div className='navbar-item'>
-                  <NavLink to="/uploadList">
+                  <NavLink to="/artList">
                     Explore
                     <span className='lines'></span>
                   </NavLink>

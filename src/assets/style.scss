@@ -30,7 +30,7 @@
   icon box / .icon-box 
   carousel / .d-carousel
   filter / .items_filter
-  uploadList / #profile_banner 
+  artList / #profile_banner 
   item details / .item_info
   wallet / .box-url 
   login / .field-set label
@@ -3229,6 +3229,14 @@ i.font60 {
   font-weight: 800;
   font-size: 15px;
   margin-bottom: 5px;
+  // for limiting text to 2 lines
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nft__item_price {
@@ -3758,7 +3766,7 @@ i.font60 {
   }
 }
 
-/*** uploadList ***/
+/*** artList ***/
 #profile_banner {
   min-height: 360px;
 }

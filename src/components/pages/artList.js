@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const UploadList = function () {
+const ArtList = function () {
   const [openMenu, setOpenMenu] = React.useState(true);
   const [openMenu1, setOpenMenu1] = React.useState(false);
   const handleBtnClick = (): void => {
@@ -81,4 +81,4 @@ const UploadList = function () {
     </div>
   );
 }
-export default UploadList;
+export default ArtList;
