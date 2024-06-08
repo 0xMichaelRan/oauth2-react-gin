@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Clock from "./Clock";
-import UserService from '../../services/UserService'
+import PainterService from '../../services/PainterService'
 
 const Outer = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ export default class Responsive extends Component {
     }
 
     componentDidMount() {
-        UserService.getUsers().then((res) => {
+        PainterService.getPainters().then((res) => {
             if (res.data == null) {
                 this.props.history.push('/add-user/_add');
             }
@@ -71,7 +71,7 @@ export default class Responsive extends Component {
                             </div>
                             <div className="nft__item_info">
                                 <span onClick={() => window.open(nft.first_name, "_self")}>
-                                    <h4>{nft.firstName + " " + nft.lastName}</h4>
+                                    <h4>{nft.name + ": " + nft.phone}</h4>
                                 </span>
                                 <div className="nft__item_price">
                                     {nft.last_name}<span>{nft.first_name}</span>
