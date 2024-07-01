@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+
 const Activity = function () {
 
   const [openMenu, setOpenMenu] = React.useState(true);

@@ -16,20 +16,12 @@ import Wallet from './pages/wallet';
 import Login from './pages/login';
 import LoginTwo from './pages/loginTwo';
 import Register from './pages/register';
-import Price from './pages/price';
 import Works from './pages/works';
 import News from './pages/news';
 import Create from './pages/create';
 import Auction from './pages/Auction';
 import Activity from './pages/activity';
 import Contact from './pages/contact';
-import ElegantIcons from './pages/elegantIcons';
-import EtlineIcons from './pages/etlineIcons';
-import FontAwesomeIcons from './pages/fontAwesomeIcons';
-import Accordion from './pages/accordion';
-import Alerts from './pages/alerts';
-import Progressbar from './pages/progressbar';
-import Tabs from './pages/tabs';
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -80,20 +72,20 @@ const app = () => (
         <Login path="/login" />
         <LoginTwo path="/loginTwo" />
         <Register path="/register" />
-        <Price path="/price" />
         <Works path="/works" />
         <News path="/news" />
         <Create path="/create" />
         <Auction path="/Auction" />
         <Activity path="/activity" />
         <Contact path="/contact" />
-        <ElegantIcons path="/elegantIcons" />
+        {/* <ElegantIcons path="/elegantIcons" />
         <EtlineIcons path="/etlineIcons" />
         <FontAwesomeIcons path="/fontAwesomeIcons" />
         <Accordion path="/accordion" />
         <Alerts path="/alerts" />
+        <Price path="/price" />
         <Progressbar path="/progressbar" />
-        <Tabs path="/tabs" />
+        <Tabs path="/tabs" /> */}
       </ScrollTop>
     </PosedRouter>
     <ScrollToTopBtn />

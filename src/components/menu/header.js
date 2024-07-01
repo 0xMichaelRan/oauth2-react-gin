@@ -31,15 +31,13 @@ const Header = function () {
 
   const [openMenu1, setOpenMenu1] = React.useState(false);
   const [openMenu2, setOpenMenu2] = React.useState(false);
-  const [openMenu3, setOpenMenu3] = React.useState(false);
+
   const handleBtnClick1 = (): void => {
     setOpenMenu1(!openMenu1);
   };
+
   const handleBtnClick2 = (): void => {
     setOpenMenu2(!openMenu2);
-  };
-  const handleBtnClick3 = (): void => {
-    setOpenMenu3(!openMenu3);
   };
 
   const closeMenu1 = (): void => {
@@ -48,18 +46,12 @@ const Header = function () {
   const closeMenu2 = (): void => {
     setOpenMenu2(false);
   };
-  const closeMenu3 = (): void => {
-    setOpenMenu3(false);
-  };
 
   const ref1 = useOnclickOutside(() => {
     closeMenu1();
   });
   const ref2 = useOnclickOutside(() => {
     closeMenu2();
-  });
-  const ref3 = useOnclickOutside(() => {
-    closeMenu3();
   });
 
   const [showmenu, btn_icon] = useState(false);
@@ -138,6 +130,7 @@ const Header = function () {
                       )}
                     </div>
                   </div>
+
                   <div className='navbar-item'>
                     <div ref={ref2}>
                       <div className="dropdown-custom dropdown-toggle btn"
@@ -162,40 +155,33 @@ const Header = function () {
                       )}
                     </div>
                   </div>
+
                   <div className='navbar-item'>
                     <NavLink to="/activity" onClick={() => btn_icon(!showmenu)}>
                       Activity
                     </NavLink>
                   </div>
-                  <div className='navbar-item'>
-                    <div ref={ref3}>
-                      <div className="dropdown-custom dropdown-toggle btn"
-                        onClick={handleBtnClick3}
-                      >
-                        Element
-                      </div>
-                      {openMenu3 && (
-                        <div className='item-dropdown'>
-                          <div className="dropdown" onClick={closeMenu3}>
-                            <NavLink to="/elegantIcons" onClick={() => btn_icon(!showmenu)}>Elegant Icon</NavLink>
-                            <NavLink to="/etlineIcons" onClick={() => btn_icon(!showmenu)}>Etline Icon</NavLink>
-                            <NavLink to="/fontAwesomeIcons" onClick={() => btn_icon(!showmenu)}>Font Awesome Icon</NavLink>
-                            <NavLink to="/accordion" onClick={() => btn_icon(!showmenu)}>Accordion</NavLink>
-                            <NavLink to="/alerts" onClick={() => btn_icon(!showmenu)}>Alerts</NavLink>
-                            <NavLink to="/price" onClick={() => btn_icon(!showmenu)}>Pricing Table</NavLink>
-                            <NavLink to="/progressbar" onClick={() => btn_icon(!showmenu)}>Progress bar</NavLink>
-                            <NavLink to="/tabs" onClick={() => btn_icon(!showmenu)}>Tabs</NavLink>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+
                 </div>
               }
             </Breakpoint>
 
             <Breakpoint xl>
               <div className='menu'>
+
+              <div className='navbar-item'>
+                  <NavLink to="/">
+                    Home0
+                    <span className='lines'></span>
+                  </NavLink>
+                </div>
+
+                <div className='navbar-item'>
+                  <NavLink to="/home1">
+                    Home1
+                    <span className='lines'></span>
+                  </NavLink>
+                </div>
 
                 <div className='navbar-item'>
                   <NavLink to="/Auction">
@@ -219,6 +205,13 @@ const Header = function () {
                 </div>
 
                 <div className='navbar-item'>
+                  <NavLink to="/create">
+                    Upload
+                    <span className='lines'></span>
+                  </NavLink>
+                </div>
+
+                <div className='navbar-item'>
                   <NavLink to="/activity">
                     Activity
                     <span className='lines'></span>
@@ -234,15 +227,12 @@ const Header = function () {
                       {openMenu1 && (
                         <div className='item-dropdown'>
                           <div className="dropdown" onClick={closeMenu1}>
-                            <NavLink to="/">Home-default</NavLink>
-                            <NavLink to="/home1">Home1</NavLink>
                             <NavLink to="/explore">Explore 1</NavLink>
                             <NavLink to="/explore2">Explore 2</NavLink>
                             <NavLink to="/rangking">Rangking</NavLink>
                             <NavLink to="/wallet">Wallet</NavLink>
                             <NavLink to="/helpcenter">Help Center</NavLink>
                             <NavLink to="/Author">Author</NavLink>
-                            <NavLink to="/create">Create</NavLink>
                             <NavLink to="/news">News</NavLink>
                             <NavLink to="/works">Gallery</NavLink>
                             <NavLink to="/contact">Contact Us</NavLink>
