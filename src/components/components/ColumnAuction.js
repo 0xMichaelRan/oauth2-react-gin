@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
 export default class Responsive extends Component {
 
     dummyData = [{
-        deadline: "December, 30, 2021",
+        deadline: "May, 30, 2024",
         authorLink: "#",
         nftLink: "#",
         bidLink: "#",

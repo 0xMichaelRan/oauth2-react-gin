@@ -212,6 +212,20 @@ const Header = function () {
                 </div>
 
                 <div className='navbar-item'>
+                  <NavLink to="/ItemDetail">
+                    Art-detail
+                    <span className='lines'></span>
+                  </NavLink>
+                </div>
+
+                <div className='navbar-item'>
+                  <NavLink to="/activity">
+                    Activity
+                    <span className='lines'></span>
+                  </NavLink>
+                </div>
+
+                <div className='navbar-item'>
                   <div ref={ref1}>
                     <div className="dropdown-custom dropdown-toggle btn"
                       onMouseEnter={handleBtnClick1} onMouseLeave={closeMenu1}>
@@ -220,15 +234,12 @@ const Header = function () {
                       {openMenu1 && (
                         <div className='item-dropdown'>
                           <div className="dropdown" onClick={closeMenu1}>
-                            <NavLink to="/">Homepage 1</NavLink>
-                            <NavLink to="/home1">Homepage 2</NavLink>
-                            <NavLink to="/home2">Homepage 3</NavLink>
-                            <NavLink to="/explore">Explore</NavLink>
+                            <NavLink to="/">Home-default</NavLink>
+                            <NavLink to="/home1">Home1</NavLink>
+                            <NavLink to="/explore">Explore 1</NavLink>
                             <NavLink to="/explore2">Explore 2</NavLink>
                             <NavLink to="/rangking">Rangking</NavLink>
-                            <NavLink to="/ItemDetail">Items Details</NavLink>
                             <NavLink to="/wallet">Wallet</NavLink>
-                            <NavLink to="/activity">Activity</NavLink>
                             <NavLink to="/helpcenter">Help Center</NavLink>
                             <NavLink to="/Author">Author</NavLink>
                             <NavLink to="/create">Create</NavLink>
